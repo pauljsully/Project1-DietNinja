@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var activityInput = document.getElementById('activity-item');
         var activity = activityInput.value;
-        var activityList = document.querySelector('ul');
+        var activityList = document.getElementById('activitylist');
 
         var currentTime = dayjs().format('h:mm a');
     
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 activityList.appendChild(listActivity);
 
                 // Update total calories
-                totalCalories += activityCalories;
+                totalCalories -= activityCalories;
                 calorieTotalElement.textContent = 'Activity calories: ' + totalCalories;
             }
         })
